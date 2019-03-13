@@ -1,0 +1,24 @@
+  
+public class TenLineArray{
+    
+public static void main (String[]args){
+
+   int[]x= new int[100];
+  
+   int a=100;
+   for(int b=0; b<10; b++){ //o for de fora te mostra o numero de linhas/ pula de linha
+    System.out.println("");
+       for(int i=0; i<10; i++){ //o for de dentro mostra o numero de itens por linha /imprime a linha
+           
+     x[i]=a--;
+     
+       System.out.print(" "+x[i]);
+    
+    }
+  
+    
+    }
+
+    
+}
+}

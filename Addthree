@@ -1,0 +1,23 @@
+//programa que soma de 3 em 3
+
+public class AddThree {
+    
+public static void main (String[]args){
+    
+int i;
+
+for (i= 3; i <=36; i+=3){
+
+
+// print the numbers
+System.out.println(i);
+
+}
+
+
+
+
+
+}
+
+}

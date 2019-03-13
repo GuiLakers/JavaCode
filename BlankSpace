@@ -1,0 +1,34 @@
+ /* This program erases all the blank spaces among characters.
+Except the ones to separate one word from another */
+
+import java.util.Scanner;
+
+public class BlankSpace{
+
+
+    public static void main(String[]args){
+
+    
+ Scanner kb= new Scanner(System.in);
+    
+      
+    
+      System.out.println("Type a sentence");
+    
+    
+      
+       String sentence= kb.nextLine();
+          
+       
+       
+       sentence=sentence.trim().replaceAll("\\s+"," ");
+         
+               
+       
+
+     System.out.println(sentence);
+          
+          
+         
+    }    
+    }

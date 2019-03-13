@@ -1,0 +1,40 @@
+//The longest string
+ import java.util.Scanner;
+
+public class LongestString{
+
+ public static void main(String [] args){
+    
+          Scanner kb = new Scanner(System.in);
+         
+         int sizeA=0;
+         int sizeB=0;
+         
+          
+        System.out.println("Input a word, please");
+         
+          String nameA = kb.nextLine();
+          
+          sizeA= nameA.length();
+          
+          System.out.println("Input another word, please");
+        
+          String nameB = kb.nextLine();
+          
+           sizeB= nameB.length();
+          
+          if(sizeA>sizeB){
+          
+            System.out.println("The first word is the longest with "+sizeA+ " characters");
+              
+            }else if(sizeA==sizeB){
+                      
+                System.out.println("They are the same quantity, "+sizeA+ " characters");
+                      
+                  }else{
+                
+                    System.out.println("The second is the longest with "+sizeB+ " characters");
+       
+        }
+    }
+}

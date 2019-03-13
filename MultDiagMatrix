@@ -1,0 +1,28 @@
+//multiplying main diagonal of a matrix by 2
+public class DiagonalMatrixMult{
+    
+public static void main (String[]args){
+
+int[][] matrix = {{2,4},
+ 		  {3,1}};
+	         
+                 
+ for(int row = 0; row < matrix.length; row++) {
+  for(int col = 0; col < matrix[row].length;col++) {
+   if (row== col)
+	matrix[row][col] = matrix[row][col] * 2;
+   }
+}
+  
+ for(int row = 0; row < matrix.length; row++) {
+  for(int col = 0; col < matrix[row].length;col++) {
+
+  System.out.print(matrix[row][col]+" ");
+}
+  System.out.println();
+}
+
+
+
+}
+}

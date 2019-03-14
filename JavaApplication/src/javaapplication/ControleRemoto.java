@@ -1,0 +1,86 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication;
+
+/**
+ *
+ * @author pmotel
+ */
+public class ControleRemoto {
+
+    private int vol;
+    private int canal = 1;
+
+    void aumentaVol() {
+
+        if (this.vol >= 10) {
+
+            //se o volume for maior ou igual a 10, eu saio do metodo sem aumentar, do contrario continuo aumentando ate o 10
+            System.out.println("Volume entre 0 e 10");
+            return;
+        }
+        vol++;
+
+    }
+
+    void diminuiVol() {
+
+        if (this.vol <= 0) {
+            //se o volume for menor ou igual a 0, eu saio do metodo sem diminuir, do contrario continuo diminuindo ate o 0            
+            System.out.println("Volume entre 0 e 10");
+            return;
+        }
+        vol--;
+
+    }
+
+    void aumentaCanal() {
+
+        if (this.canal >= 200) {
+            //se o canal for maior ou igual a 200, eu saio do metodo sem aumentar, do contrario continuo aumentando ate o 200  
+            System.out.println("Canais entre 1 e 200");
+            return;
+        }
+        canal++;
+
+    }
+
+    void diminuiCanal() {
+
+        if (this.canal <= 1) {
+            //se o canal for menor ou igual a 1, eu saio do metodo sem diminuir, do contrario continuo diminuindo ate o 1  
+            System.out.println("Canais entre 1 e 200");
+            return;
+        }
+        canal--;
+
+    }
+
+    //metodo que troca de canal digitando diretamente o numero
+    void trocarCanal(int canal) {
+        if (canal > 200 || canal < 1) {
+            System.out.println("Canais entre 1 e 200");
+            return;
+
+        }
+
+        this.canal = canal;
+
+    }
+
+    //metodo que printa o volume atual
+    void consultaVol() {
+        System.out.println(this.vol);
+
+    }
+    
+    //metodo que printa o canal atual
+    void consultaCanal() {
+        System.out.println(this.canal);
+
+    }
+
+}

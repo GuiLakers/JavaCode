@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MetEncapsulate",
+            "request": "launch",
+            "mainClass": "metencapsulate.MetEncapsulate"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MetElevador",
+            "request": "launch",
+            "mainClass": "metelevador.MetElevador"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "test.Test"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Carro",
+            "request": "launch",
+            "mainClass": "carro.Carro"
+        }
+    ]
+}

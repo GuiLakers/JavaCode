@@ -1,6 +1,11 @@
 {
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Addthree",
+            "request": "launch",
+            "mainClass": "javaapplication.Addthree"
+        },
         {
             "type": "java",
             "name": "CodeLens (Launch) - MetEncapsulate",

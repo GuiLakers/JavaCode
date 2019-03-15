@@ -16,10 +16,10 @@ import java.sql.SQLException;
  */
 public class InsertBd {
     
-    Connection conn;
-    PreparedStatement ps;
+    static Connection conn;
+    static PreparedStatement ps;
     
-    public boolean register(Register rg){
+    public static boolean register(Register rg){
         try {
             
             String INSERT_QUERY = "INSERT INTO register (name,email,phone) VALUES(?,?,?)";

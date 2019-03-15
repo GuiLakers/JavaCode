@@ -9,10 +9,7 @@ import Entities.Register;
 import dbexample.DAO.InsertBd;
 import dbexample.DAO.SelectBd;
 import dbexample.DAO.UpdateBd;
-import static java.lang.System.out;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -195,11 +192,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 jTextFieldPhone.getText()
         );
 
-        boolean register = new InsertBd().register(newRegister);
-
         try {
             loadData();
-            if (register) {
+            if (InsertBd.register(newRegister)) {
                 clearFields();
                 JOptionPane.showMessageDialog(jPanel1, "Register inserted!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
@@ -222,8 +217,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 jTextFieldPhone.getText()
         );
 
-        boolean register = new UpdateBd().register(updateRegister);
-        if (register) {
+        if (UpdateBd.register(updateRegister)) {
             clearFields();
             JOptionPane.showMessageDialog(jPanel1, "Register updated!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -236,6 +230,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
      */
     public static void main(String args[]) throws SQLException {
         /* Set the Nimbus look and feel */
@@ -250,22 +245,16 @@ public class NewJFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewJFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new NewJFrame().setVisible(true);
         });
 
     }
@@ -276,7 +265,7 @@ public class NewJFrame extends javax.swing.JFrame {
         tableModel.setRowCount(0);
 
         Object[] rowData = new Object[4];
-        List<Register> getRegisters = new SelectBd().allRegisters();
+        List<Register> getRegisters = SelectBd.allRegisters();
         for (int i = 0; i < getRegisters.size(); i++) {
             rowData[0] = getRegisters.get(i).getId();
             rowData[1] = getRegisters.get(i).getName();

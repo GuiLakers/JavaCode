@@ -20,11 +20,11 @@ import java.util.List;
  */
 public class SelectBd {
 
-    Connection conn;
-    PreparedStatement ps;
-    ResultSet rs;
+    static Connection conn;
+    static PreparedStatement ps;
+    static ResultSet rs;
 
-    public List<Register> allRegisters() throws SQLException {
+    public static List<Register> allRegisters() throws SQLException {
 
         List<Register> registers = null;
 

@@ -16,10 +16,10 @@ import java.sql.SQLException;
  */
 public class UpdateBd {
     
-    Connection conn;
-    PreparedStatement ps;
+    static Connection conn;
+    static PreparedStatement ps;
     
-    public boolean register(Register rg){
+    public static boolean register(Register rg){
         try {
             
             String UPDATE_QUERY = "UPDATE register SET name=?,email=?,phone=? WHERE id=?";

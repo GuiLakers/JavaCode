@@ -13,6 +13,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -52,5 +54,16 @@ public class SelectBd {
             out.println(e);
         }
         return registers;
+    }
+    
+    public static List<Register> filteredList(List<Register> registers, String term){
+    
+        return registers.stream()
+                .filter(
+                    rg -> String.valueOf(rg.getId()).contains(term) || 
+                            rg.getName().contains(term) ||
+                            rg.getEmail().contains(term)
+                )
+                .collect(Collectors.toList());
     }
 }

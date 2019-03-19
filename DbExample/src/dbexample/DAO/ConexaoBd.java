@@ -22,7 +22,7 @@ public class ConexaoBd {
         try {
 
             // Carregando o JDBC Driver padrão
-            String driverName = "com.mysql.cj.jdbc.Driver";
+            String driverName = "com.mysql.jdbc.Driver";
 
             Class.forName(driverName);
 
@@ -32,15 +32,17 @@ public class ConexaoBd {
             String serverName = "localhost";    
 
             //nome do seu banco de dados
-            String mydatabase ="test";        
+            String mydatabase ="teste";        
  
-            String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
+            String url = "jdbc:mysql://" + serverName + "/" + mydatabase + "?autoReconnect=true&useSSL=false";
 
             //nome de um usuário de seu BD
             String username = "root";              
 
             //sua senha de acesso
-            String password = "mobile040904";      
+            
+           // String password = "mobile040904";      
+              String password = "Guifun080808$";  
 
             connection = DriverManager.getConnection(url, username, password);
 

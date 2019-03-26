@@ -23,7 +23,9 @@ Pedido
 //métodos
 ============
 Crie uma interface gráfica para controlar o funcionamento do programa. Armazene as mesas ocupadas em uma lista.
-Cada cliente que chega, adicione uma nova mesa na lista. Cada cliente que sai, remova a mesa da lista. O valor da conta da mesa removida deve ser acumulada numa variável "faturamento", para saber quando foi apurado no dia.
+Cada cliente que chega, adicione uma nova mesa na lista. Cada cliente que sai, remova a mesa da lista. 
+O valor da conta da mesa removida deve ser acumulada numa variável "faturamento", para saber quando foi 
+apurado no dia.
 ==============
 Restaurante         (JFrame/Interface gráfica)
 ==============

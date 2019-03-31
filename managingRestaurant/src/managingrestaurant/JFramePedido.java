@@ -44,6 +44,7 @@ public class JFramePedido extends javax.swing.JFrame {
         jButtonReservar.setVisible(false);
         jLabelClienteReserva.setText(clienteReserva);
         btnMesa.setBackground(Color.YELLOW);
+        
     }
 
     /**
@@ -163,6 +164,9 @@ public class JFramePedido extends javax.swing.JFrame {
         jComboBox1.removeAllItems();
         jComboBox1.addItem("Frango frito - 12.90");
         jComboBox1.addItem("Frango assado - 18.90");
+       
+      
+        
     }
 
     /**

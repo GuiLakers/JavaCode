@@ -1,5 +1,6 @@
 package managingrestaurant;
 
+import Entities.itemComboBoxPedido;
 import Entities.mesa;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -117,23 +119,33 @@ public class JFrameRestaurante extends javax.swing.JFrame {
             btn.addActionListener((ActionEvent ev) -> {
                 //btn.setFont(new Font("Dialog", Font.PLAIN, 10));
                 //btn.revalidate();
-                //JOptionPane.showMessageDialog(jPanel1, btn.getName(), "Mesa Selecionada!", JOptionPane.INFORMATION_MESSAGE);
+                //JOptionPane.showMessageDialog(jPanel1, btn.getName(), "Mesa Selecionada!", JOptirouonPane.INFORMATION_MESSAGE);
                 JFramePedido criarPedido = new JFramePedido(this, pedidoMesa, btn);
                 if (statusMesa(pedidoMesa.getNumero())) {
                     mesa dadosMesa = listaDeMesas.stream().filter(m -> m.getNumero() == pedidoMesa.getNumero()).findFirst().get();
                     criarPedido.SetReserva(dadosMesa.getCliente());
+                    JOptionPane.showMessageDialog(rootPane, "Table is free for the next customer");
+                    
+                 
+                    itemComboBoxPedido item1= new itemComboBoxPedido();
+                 
+                    
+                   
+                    JOptionPane.showMessageDialog(rootPane, "The bill for " +dadosMesa.getCliente()+ " is "+item1);
+                    
+                     
                 }
                 criarPedido.setTitle("Mesa " + pedidoMesa.getNumero());
                 criarPedido.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 criarPedido.setVisible(rootPaneCheckingEnabled);
+                 
             });
-            btn.addChangeListener((e) -> {
-                btn.revalidate();
-            });
+          
             jPanel1.add(btn);
             jPanel1.putClientProperty(btn.getName(), btn);
             jPanel1.revalidate();
             jPanel1.repaint();
+           
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

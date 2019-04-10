@@ -6,6 +6,7 @@
 package managingrestaurant;
 
 import Entities.mesa;
+import Entities.pedido;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
@@ -43,7 +44,7 @@ public class JFramePedido extends javax.swing.JFrame {
         jTextFieldClienteReserva.setVisible(false);
         jButtonReservar.setVisible(false);
         jLabelClienteReserva.setText(clienteReserva);
-        btnMesa.setBackground(Color.YELLOW);
+       
         
     }
 
@@ -139,8 +140,9 @@ public class JFramePedido extends javax.swing.JFrame {
 
     private void jButtonReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReservarActionPerformed
         jLabelClienteReserva.setText(jTextFieldClienteReserva.getText());
+         btnMesa.setBackground(Color.YELLOW);
         if (!mainJFrameRestaurante.statusMesa(pedidoMesa.getNumero())) {
-            mesa reservarMesa = new mesa(pedidoMesa.getNumero(), jTextFieldClienteReserva.getText());
+            mesa reservarMesa = new mesa(pedidoMesa.getNumero(), jTextFieldClienteReserva.getText(),new pedido(8));
             mainJFrameRestaurante.listaDeMesas.add(reservarMesa);
         }
     }//GEN-LAST:event_jButtonReservarActionPerformed
@@ -155,8 +157,8 @@ public class JFramePedido extends javax.swing.JFrame {
         rowData[1] = item[1];
 
         tableModel.addRow(rowData);
-
-
+     
+     
     }//GEN-LAST:event_jButtonPedirActionPerformed
 
     public void fillJComboBox() {

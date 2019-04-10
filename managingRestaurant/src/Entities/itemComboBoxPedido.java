@@ -14,11 +14,6 @@ public class itemComboBoxPedido {
         this.valor = valor;
     }
 
-    public itemComboBoxPedido() {
-        
-    }
-    
-
     @Override
     public String toString() {
         return produto;

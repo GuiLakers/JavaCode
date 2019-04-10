@@ -2,6 +2,7 @@ package managingrestaurant;
 
 import Entities.itemComboBoxPedido;
 import Entities.mesa;
+import Entities.pedido;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -111,7 +112,7 @@ public class JFrameRestaurante extends javax.swing.JFrame {
         int numeroDeMesas = (int) jSpinner1.getValue();
         jButton1.setEnabled(false);
         for (int i = 1; i <= numeroDeMesas; i++) {
-            mesa pedidoMesa = new mesa(i, "");
+            mesa pedidoMesa = new mesa(i, "", new pedido(8));
             JButton btn = new JButton("Mesa " + i);
             btn.setName("Mesa_" + i);
             btn.setPreferredSize(new Dimension(125, 85));
@@ -124,28 +125,19 @@ public class JFrameRestaurante extends javax.swing.JFrame {
                 if (statusMesa(pedidoMesa.getNumero())) {
                     mesa dadosMesa = listaDeMesas.stream().filter(m -> m.getNumero() == pedidoMesa.getNumero()).findFirst().get();
                     criarPedido.SetReserva(dadosMesa.getCliente());
-                    JOptionPane.showMessageDialog(rootPane, "Table is free for the next customer");
-                    
-                 
-                    itemComboBoxPedido item1= new itemComboBoxPedido();
-                 
-                    
-                   
-                    JOptionPane.showMessageDialog(rootPane, "The bill for " +dadosMesa.getCliente()+ " is "+item1);
-                    
-                     
+
                 }
                 criarPedido.setTitle("Mesa " + pedidoMesa.getNumero());
                 criarPedido.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 criarPedido.setVisible(rootPaneCheckingEnabled);
-                 
+
             });
-          
+
             jPanel1.add(btn);
             jPanel1.putClientProperty(btn.getName(), btn);
             jPanel1.revalidate();
             jPanel1.repaint();
-           
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

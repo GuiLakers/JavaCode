@@ -11,12 +11,12 @@ public class mesa implements Serializable {
     @Id
     private int numero;
     private String cliente;
-    private ArrayList<pedido> pedido = null;
+    private pedido pedido;
 
-    public mesa(int numero, String cliente) {
+    public mesa(int numero, String cliente, pedido pedido) {
         this.numero = numero;
         this.cliente = cliente;
-        this.pedido = new ArrayList<>();
+        this.pedido= pedido;
     }
 
     public int getNumero() {
@@ -31,7 +31,7 @@ public class mesa implements Serializable {
         return this.cliente;
     }
     
-    public ArrayList<Entities.pedido> setPedido(){
+    public Entities.pedido setPedido(){
         return pedido;
     }
     

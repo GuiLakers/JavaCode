@@ -29,6 +29,5 @@ public class pedido implements Serializable {
     public void addItem(itemPedido item){
         itens.add(item);
     }
-    
-    
+  
 }

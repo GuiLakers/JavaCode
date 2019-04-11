@@ -11,7 +11,7 @@ public class mesa implements Serializable {
     @Id
     private int numero;
     private String cliente;
-    private pedido pedido;
+    public pedido pedido;
 
     public mesa(int numero, String cliente, pedido pedido) {
         this.numero = numero;

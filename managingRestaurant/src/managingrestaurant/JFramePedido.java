@@ -5,6 +5,7 @@
  */
 package managingrestaurant;
 
+import Entities.itemPedido;
 import Entities.mesa;
 import Entities.pedido;
 import java.awt.Color;
@@ -18,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class JFramePedido extends javax.swing.JFrame {
 
     private final JFrameRestaurante mainJFrameRestaurante;
-    private mesa pedidoMesa;
+    private mesa mesa;
     private JButton btnMesa;
 
     /**
@@ -31,7 +32,7 @@ public class JFramePedido extends javax.swing.JFrame {
     public JFramePedido(JFrameRestaurante mainJFrameRestaurante, mesa pedidoMesa, JButton btnMesa) {
         initComponents();
         this.mainJFrameRestaurante = mainJFrameRestaurante;
-        this.pedidoMesa = pedidoMesa;
+        this.mesa = pedidoMesa;
         this.btnMesa = btnMesa;
         fillJComboBox();
     }
@@ -141,8 +142,8 @@ public class JFramePedido extends javax.swing.JFrame {
     private void jButtonReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReservarActionPerformed
         jLabelClienteReserva.setText(jTextFieldClienteReserva.getText());
          btnMesa.setBackground(Color.YELLOW);
-        if (!mainJFrameRestaurante.statusMesa(pedidoMesa.getNumero())) {
-            mesa reservarMesa = new mesa(pedidoMesa.getNumero(), jTextFieldClienteReserva.getText(),new pedido(8));
+        if (!mainJFrameRestaurante.statusMesa(mesa.getNumero())) {
+            mesa reservarMesa = new mesa(mesa.getNumero(), jTextFieldClienteReserva.getText(),new pedido(8));
             mainJFrameRestaurante.listaDeMesas.add(reservarMesa);
         }
     }//GEN-LAST:event_jButtonReservarActionPerformed
@@ -158,7 +159,14 @@ public class JFramePedido extends javax.swing.JFrame {
 
         tableModel.addRow(rowData);
      
-     
+        // aqui esta sendo alimentado o array de itens do pedido
+        // agora é tratar para que os itens sejam mostrados
+        // no momento que o usuario clicar no botão da mesa
+        // tenta continuar daqui e qualquer coisa só falar
+        itemPedido novoItem;
+        novoItem = new itemPedido(item[0],Double.parseDouble(item[1]));
+
+        mesa.pedido.addItem(novoItem);
     }//GEN-LAST:event_jButtonPedirActionPerformed
 
     public void fillJComboBox() {

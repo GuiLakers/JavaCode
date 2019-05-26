@@ -1,0 +1,49 @@
+    
+import java.util.Scanner;
+
+public class Transpose {
+
+    public static void main(String[] args) {
+
+        Scanner kb = new Scanner(System.in);
+
+        int[][] matrix = new int[3][4];
+        int[][] transp = new int[4][3];
+
+        System.out.println("input the elements of an array");
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+
+                matrix[row][col] = kb.nextInt();
+//the transpose is the inversion of a matrix ---transp[row][col] = matrix[col][row];
+            }
+        }
+
+        for (int row = 0; row < transp.length; row++) {
+            for (int col = 0; col < transp[row].length; col++) {
+
+                transp[row][col] = matrix[col][row];
+            }
+        }
+        
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+
+                System.out.print(matrix[row][col] + " ");
+            }
+            System.out.println();
+        }
+        
+         System.out.println();
+        
+        for (int row = 0; row < transp.length; row++) {
+            for (int col = 0; col < transp[row].length; col++) {
+
+                System.out.print(transp[row][col] + " ");
+            }
+            System.out.println();
+        }
+     
+    }
+    }

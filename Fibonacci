@@ -1,0 +1,31 @@
+          
+import  java.util.Scanner;
+
+public class Fibonacci {
+	
+public static void main(String[] args){
+       
+    int quantNum, cont;
+    int ant=0, atual=1, prox=1;
+    
+    
+    Scanner kb = new Scanner( System.in );
+        
+        
+     System.out.println("digite a quantidade de numeros desejados");  
+	
+     quantNum=kb.nextInt();
+     
+     
+       for(int i=1; i<quantNum;i++){
+        
+        System.out.println(prox);   
+        prox=atual+ant;
+        ant=atual;
+        atual=prox;
+        
+        }
+    
+
+}
+}

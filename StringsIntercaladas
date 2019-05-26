@@ -1,0 +1,38 @@
+/*Faça um programa que leia 2 strings (A e B) e gere uma terceira string (C) formada
+pelos caracteres de A e B intercalados. Ex.: Se A='Quarta' e B='Segunda', a resposta
+deve ser 'QSueagrutnada'*/
+package stringsintercaladas;
+
+import java.util.Scanner;
+public class StringsIntercaladas {
+
+    
+    public static void main(String[] args) {
+       
+    Scanner kb = new Scanner(System.in);
+
+      
+        
+        String name3 = "";
+        
+
+        System.out.println("Digite uma palavra qualquer");
+
+       char[] name1 = kb.nextLine().toCharArray();
+       
+
+        System.out.println("Digite outra palavra qualquer");
+
+        char[]name2 = kb.nextLine().toCharArray();
+        
+
+        for (int i = 0; i < name1.length;i++) {
+
+           name3= name3+name1[i]+name2[i];
+        }
+     
+        System.out.println(name3);
+    
+    }
+}
+   

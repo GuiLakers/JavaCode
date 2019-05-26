@@ -1,0 +1,49 @@
+//this program shows the minimun value of an array....to get the maximum, you just need to change the"<" to ">" and vice and versa
+import java.util.Random;
+import java.util.Scanner;
+
+public class minValue {
+    
+public static void main (String[]args){
+ 
+  int x[]= new int [10];
+   int minValue=x[0];
+  
+  
+  Random num = new Random();   
+  Scanner kb = new Scanner( System.in );
+ //generate 10 random numbers
+  for(int i=0; i<10;i++)
+   x[i]= num.nextInt(199)-99;
+    
+      
+    
+
+//display the array.
+
+  for(int i=0; i<x.length;i++){
+
+      System.out.print(x[i]+ " ");
+
+}
+ 
+      for(int i=0; i<x.length;i++){
+          
+          //catch the minimun value in the array 
+          if(minValue>x[i])
+     
+        minValue=x[i];
+        
+   
+   
+      
+    }
+      //display the minimun value
+         System.out.println(); 
+   
+       System.out.println("The min value is "+minValue);  
+     
+        
+    
+    }
+   }

@@ -1,0 +1,30 @@
+    
+
+//This program prints the middle column of the array below
+public class MiddleColumn{
+    
+public static void main (String[]args){
+
+int[][] matrix = {{2,4,3},
+ 		  {3,1,2},
+	          {5,2,0}};
+                 
+	          
+  	          
+ 	          
+  for(int row = 0; row < matrix.length; row++) {
+  for(int col = 1; col < matrix[row].length;col+=3) {
+   
+       
+  
+
+  System.out.print(matrix[row][col]+" ");
+}
+  System.out.println();
+
+}
+
+
+}
+}	    		 
+	

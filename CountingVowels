@@ -1,0 +1,49 @@
+//Write a program that inputs a single character from the keyboard until the
+//character 'x' or 'X' is input.
+//The program then displays a count of each upper-case and lower-case vowel input.
+//(Note: A vowel is one of the following: a e i o u A E I O U) 
+
+import java.util.Scanner;
+ 
+ public class CountingVowels{
+
+ public static void main(String [] args){
+
+       char c;
+       int count=0;
+       
+       Scanner kb = new Scanner(System.in);
+       
+         //infinite loop until gets a x or X letter
+        for(int i=0; i<1;){
+       System.out.println("input a letter");
+           
+      
+         c= kb.nextLine().charAt(0);
+
+        //upper and lowercase vowels 
+        
+          if(c == 'A' || c== 'E' || c == 'I' || c == 'O' || c == 'U'||
+             
+             c == 'a' || c== 'e' || c == 'i' || c == 'o' || c == 'u'){
+                  count++;
+            
+      
+            //all consonants apart from x and X
+        }else if (c == 'b' || c == 'c' || c == 'd' || c == 'f'|| c == 'g' || c == 'h' || c == 'j' || c == 'k'|| c == 'l' || c == 'm' 
+            || c == 'n' || c == 'p'|| c == 'q' || c == 'r' || c == 's' || c == 't'|| c == 'v' || c == 'w' || c == 'y'||c == 'z'){  
+        
+           
+             continue;
+          
+             //finish of the program if x or X is typed
+            } else if(c=='x'|| c=='X'){
+ 
+            break;
+             
+       }
+             System.out.println("The total numbers of vowels " +count);            
+     }
+     }                            
+     
+     }

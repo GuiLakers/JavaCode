@@ -1,0 +1,53 @@
+package test;
+
+import java.util.ArrayList;
+
+public class MetArrayList1 {
+
+    ArrayList<String> nomes = new ArrayList<>();
+
+    void remove(int retira) {
+
+        nomes.remove(retira);
+
+    }
+
+    void adiciona(String adiciona) {
+
+        nomes.add(adiciona);
+
+    }
+
+    void checarSize() {
+
+        System.out.println(nomes.size());
+
+    }
+
+    boolean checarArrayVazio() {
+
+        if (nomes.isEmpty()) {
+
+            return true;
+
+        } else {
+
+        }
+        return false;
+
+    }
+
+    void limparTodoArray() {
+
+        nomes.clear();
+
+    }
+
+    void printArray() {
+
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+    }
+
+}

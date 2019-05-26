@@ -1,0 +1,14 @@
+package test;
+
+public class MetArrayList {
+
+    public static void main(String[] args) {
+
+        MetArrayList1 t = new MetArrayList1();
+        t.adiciona("Bruno");
+        t.adiciona("Nayara");
+        t.adiciona("Wallace");
+
+    }
+
+}

@@ -1,0 +1,46 @@
+package validemail;
+
+/*Write a program to input a string and check whether or not it is a valid e-mail address. 
+A valid e-mail address: cannot start or end with "@" , cannot start or end with "." , must contain "@" only once , must contain ". "
+at least once after "@"  */
+import java.util.Scanner;
+
+public class ValidEmail {
+
+    public static void main(String[] args) {
+
+        Scanner kb = new Scanner(System.in);
+
+        String email = "";
+        char[] validEmail = new char[email.length()];
+
+        System.out.println("Type your e-mail, please");
+        email = kb.nextLine();
+
+        for (int i = 0; i < email.length(); i++) {
+            validEmail = email.toCharArray();
+        }
+
+        for (int i = 0; i < email.length(); i++) {
+            if (validEmail[0] == '@' || validEmail[validEmail.length - 1] == '@' || validEmail[0] == '.' || validEmail[validEmail.length - 1] == '.') {
+
+                System.out.println("invalid e-mail");
+                break;//prevent the loop to run more than once to say invalid e-mail
+
+            } else if (validEmail[i] == '@' && validEmail[i + 1] == '@') {
+                System.out.println("not allowed 2 or more at signs");
+
+                break;
+
+                //metodo para checar a posicao dos caracteres(String passada)
+            } else if (email.lastIndexOf('.') > email.indexOf('@')) {
+                System.out.println("Thank you for your new e-mail");
+                break;
+            } else {
+                System.out.println("Try a new e-mail");
+                break;
+            }
+        }
+    }
+
+}

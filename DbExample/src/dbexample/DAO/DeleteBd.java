@@ -2,7 +2,6 @@
 package dbexample.DAO;
 
 import Entities.Register;
-import static dbexample.DAO.UpdateBd.conn;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

@@ -3,6 +3,7 @@ package test;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class CatchSpecialChar extends JFrame {
 
@@ -11,9 +12,9 @@ public class CatchSpecialChar extends JFrame {
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent kb) {
                 int code= kb.getKeyCode();
-                int key= KeyEvent.VK_SEMICOLON;
+                int key= KeyEvent.VK_SPACE;
                 if (code==key) {
-                    System.out.println("Tecla SEMICOLON pressionada ");
+                    JOptionPane.showMessageDialog(rootPane, "Tecla SPACE digitada");
                     System.exit(0);
                 }
 

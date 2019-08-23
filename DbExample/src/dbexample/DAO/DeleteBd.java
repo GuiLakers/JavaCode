@@ -19,7 +19,7 @@ public class DeleteBd {
             ps = conn.prepareStatement(DELETE_QUERY);
             ps.setInt(1, rg.getId());
             ps.executeUpdate();
-            
+           
             ConexaoBd.FecharConexao();
             return true;
             

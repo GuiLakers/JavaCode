@@ -32,7 +32,7 @@ public class ConexaoBd {
             String serverName = "localhost";    
 
             //nome do seu banco de dados
-            String mydatabase ="teste";        
+            String mydatabase ="testedb";        
  
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase + "?autoReconnect=true&useSSL=false";
 
@@ -41,7 +41,7 @@ public class ConexaoBd {
 
             //sua senha de acesso
             
-           // String password = "mobile040904";      
+             
               String password = "Guifun080808$";  
 
             connection = DriverManager.getConnection(url, username, password);

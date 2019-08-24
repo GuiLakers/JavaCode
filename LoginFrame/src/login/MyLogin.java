@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package login;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author GuiLakers08
- */
+
 public class MyLogin extends javax.swing.JFrame {
 
     /**
@@ -55,6 +49,12 @@ public class MyLogin extends javax.swing.JFrame {
         jLabel1.setText(" Login");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login/whats08.jpg"))); // NOI18N
+
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
+            }
+        });
 
         jLabel2.setText(" Password");
 
@@ -132,7 +132,21 @@ public class MyLogin extends javax.swing.JFrame {
         }
         txtLogin.setText("");
          txtPassword.setText("");
+         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode()== KeyEvent.VK_ENTER) {
+               if (txtLogin.getText().equals("Gui") && txtPassword.getText().equals("080808")) {
+            JOptionPane.showMessageDialog(null, "Logado com sucesso!");
+            
+        } else {
+            
+             JOptionPane.showMessageDialog(null, "Acesso negado!");
+        }
+        } 
+    }//GEN-LAST:event_txtPasswordKeyPressed
 
     /**
      * @param args the command line arguments

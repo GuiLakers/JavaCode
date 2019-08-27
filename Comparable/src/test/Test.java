@@ -18,6 +18,7 @@ public class Test {
         lista.add(p2);
         lista.add(p3);
         
+        //lista ordenada por idade
         Collections.sort(lista);
         for (Object object : lista) {
             System.out.println(object);
